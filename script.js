@@ -5,7 +5,7 @@ function toggleMenu() {
   }
 
   function scrollToGallery() {
-    document.getElementById("galerie").scrollIntoView({
+    document.getElementById("menujour").scrollIntoView({
       behavior: "smooth"
     });
   }

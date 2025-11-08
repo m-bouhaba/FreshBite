@@ -1,131 +1,212 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
-   <style>
-    .gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  padding: 50px;
-}
-
-.gallery-item {
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.gallery-item.tall {
-  grid-row: span 2;
-  grid-column: 2; 
-}
-
-.gallery-item:hover img {
-  transform: scale(1.08);
-}
+  <style>
+    .menu-jour {
+      text-align: center;
+       padding: 60px 0px;
+    }
 
 
-@media (max-width: 900px) {
-  .gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-}
+    .menu-jour .intro {
+      color: #555;
+      margin-bottom: 40px;
+      font-size: 1.1em;
+    }
 
-   </style>
+    .plats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .plat {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 280px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .plat:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .plat img {
+      width: 100%;
+      height: 180px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+ .menuplus{
+  display: flex; 
+  justify-self: center;
+  align-items: center;
+
+ }
+
+ .btn-voir {
+      /* display: inline-block; */
+      border: none;
+      background-color: #e63946;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+
+    .prix {
+      display: inline-block;
+      background-color: #e63946;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+   
+    @media (max-width: 768px) {
+      .plats {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .plat {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <section class="herosection">
-       <nav >
-        <img src="images/freshlogo.png" alt="logo" class="logo">
-        <ul id="menulist" class="menulist">
-            <li><a href="/home.html">Acceuil</a></li>
-            <li><a href="Menu">Menu</a></li>
-            <li><a href="Gallerie">Gallerie</a></li>
-            <li><a href="/contact.html">Contact</a></li>
+  <section class="herosection">
+    <nav>
+      <img src="images/freshlogo.png" alt="logo" class="logo">
+      <ul id="menulist" class="menulist">
+        <li><a href="/home.html">Acceuil</a></li>
+        <li><a href="Menu">Menu</a></li>
+        <!-- <li><a href="Gallerie">Gallerie</a></li> -->
+        <li><a href="/contact.html">Contact</a></li>
 
-        </ul>
-      
-        <div class="burger" id="burger" onclick="toggleMenu()">
-            <img src="https://img.icons8.com/?size=100&id=36389&format=png&color=FFFFFF" alt="icon" class="icon">
-        </div>
-       </nav>
-       
-        
-        <video autoplay muted loop playsinline class="bg-video">
-            <source src="images/Design-sans-titre.mp4" type="video/mp4">
-        </video>
-        <div class="content">
-            <h3>Mange sain, vis mieux.</h3>
-            <h1>FRESHBITE</h1>
-            <h1>LA FRAICHEUR QUI APAISE</h1>
-            <p>Redécouvre le plaisir de bien manger avec des ingrédients naturels, frais et soigneusement sélectionnés pour ton bien-être.</p>
-            <button onclick="scrollToGallery()" class="btn-fresh">
-                Découvre la fraîcheur
-            </button>
-        </div>
-    </section>
+      </ul>
+
+      <div class="burger" id="burger" onclick="toggleMenu()">
+        <img src="https://img.icons8.com/?size=100&id=36389&format=png&color=FFFFFF" alt="icon" class="icon">
+      </div>
+    </nav>
 
 
-    <section class="sectionPourquoi" id="sectionPourquoi">
-        <h2>Pourquoi choisir FRESHBITE ?</h2>
-        <div class="features">
-            <div class="feature">
-                <img src="images/ingredientFrais.jpg" alt="frais">
-                <h3>Ingrédients frais</h3>
-                <p>Nous utilisons uniquement des produits frais et locaux pour garantir le meilleur goût.</p>
-            </div>
-            <div class="feature">
-                <img src="images/repasain.jpg" alt="frais">
-                <h3>Repas sains</h3>
-                <p>Des plats équilibrés et savoureux pour votre bien-être quotidien.</p>
-            </div>
-            <div class="feature">
-                <img src="images/service.jpg" alt="frais" >
-                <h3>Service</h3>
-                <p>Notre équipe dévouée s'engage à fournir un service client exceptionnel et une expérience de livraison sans faille.</p>
-            </div>
-            
-        </div>
-    </section>
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="images/Design-sans-titre.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+      <h3>Mange sain, vis mieux.</h3>
+      <h1>FRESHBITE</h1>
+      <h1>LA FRAICHEUR QUI APAISE</h1>
+      <p>Redécouvre le plaisir de bien manger avec des ingrédients naturels, frais et soigneusement sélectionnés pour
+        ton bien-être.</p>
+      <button onclick="scrollToGallery()" class="btn-fresh">
+        Découvrir le Menu du Jour
+      </button>
+    </div>
+  </section>
+
+
+  <section class="sectionPourquoi" id="sectionPourquoi">
+    <h2>Pourquoi choisir FRESHBITE ?</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="images/ingredientFrais.jpg" alt="frais">
+        <h3>Ingrédients frais</h3>
+        <p>Nous utilisons uniquement des produits frais et locaux pour garantir le meilleur goût.</p>
+      </div>
+      <div class="feature">
+        <img src="images/repasain.jpg" alt="frais">
+        <h3>Repas sains</h3>
+        <p>Des plats équilibrés et savoureux pour votre bien-être quotidien.</p>
+      </div>
+      <div class="feature">
+        <img src="images/service.jpg" alt="frais">
+        <h3>Service</h3>
+        <p>Notre équipe dévouée s'engage à fournir un service client exceptionnel et une expérience de livraison sans
+          faille.</p>
+      </div>
+
+    </div>
+  </section>
 
 
 
-    <h2>notre gallerie</h2>
-     <section class="gallery" id="galerie">
-        
-         <div class="gallery-item">
-           <img src="images/contact.jpeg" alt="Healthy bowl">
-         </div>
-  <div class="gallery-item tall">
-    <img src="images/contact.jpeg" alt="Salade fraîche">
-  </div>
-  <div class="gallery-item">
-    <img src="images/repasain.jpg" alt="Smoothie frais">
-  </div>
-  <div class="gallery-item">
-    <img src="images/service.jpg" alt="Avocado toast">
-  </div>
-  <div class="gallery-item">
-    <img src="images/ingredientFrais.jpg" alt="Pâtes veggie">
+  <section id="galerie">
+    <h2>Moments Gourmands</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="images/contact.jpeg" alt="Healthy bowl">
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/galerie.jpg" alt="Salade fraîche">
+      </div>
+      <div class="gallery-item">
+        <img src="images/plat.jpeg" alt="Smoothie frais">
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallerie.jpeg" alt="Avocado toast">
+      </div>
+      <div class="gallery-item">
+        <img src="images/group-photo.jpg" alt="Pâtes veggie">
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-jour" id="menujour">
+  <h2>Menu du Jour</h2>
+  <p class="intro">Découvrez nos plats préparés avec amour et des ingrédients frais du jour 🍴</p>
+
+  <div class="plats">
+    <div class="plat">
+      <img src="images/salade.jpg" alt="Salade fraîche">
+      <h3>Salade Méditerranéenne</h3>
+      <p>Un mélange coloré de légumes croquants, olives et feta.</p>
+      <span class="prix">45 DH</span>
+    </div>
+
+    <div class="plat">
+      <img src="images/poulet.png" alt="Poulet grillé">
+      <h3>Poulet Grillé au Citron</h3>
+      <p>Servi avec des légumes rôtis et une sauce légère.</p>
+      <span class="prix">70 DH</span>
+    </div>
+
+    <div class="plat">
+      <img src="images/pates.jpg" alt="Pâtes">
+      <h3>Pâtes à la Crème</h3>
+      <p>Délicieuses pâtes maison avec une sauce crémeuse au parmesan.</p>
+      <span class="prix">60 DH</span>
+    </div>
+
+    <div class="menuplus">
+      <div class="botton">
+        <button class="btn-voir" onclick="location.href='menu.html'">Voir Plus >>></button>
+      </div>
+      </div>
+   
   </div>
 </section>
 
 
-<script src="script.js"></script>
-    
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>

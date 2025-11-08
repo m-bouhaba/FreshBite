@@ -11,22 +11,26 @@ body{
 
  .sectionPourquoi{
     position: relative;
-  height: 100vh;
-  overflow: hidden; 
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  flex-direction: column;
+    /* height: 100vh; */
+    overflow: hidden; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
 } 
-.sectionPourquoi h2{
-   
+ h2{
+   text-align: center;
     font-size: 40px;
     font-weight: 900;
 }
 
+
+
 .features{
     display: flex;
     gap: 50px;
+    align-items: stretch;
+    flex-wrap: wrap;
 }
 
 .feature {
@@ -34,6 +38,7 @@ body{
   /* border: 1px solid black; */
   padding: 20px;
   border-radius: 0;
+   flex: 1 1 300px;
   /* width: 100px;
   height: 300px; */
   /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
@@ -215,6 +220,10 @@ a{
 
 }
 
+.contact h2, .map h2{
+  font-size: 28px;
+}
+
 .contact, .map {
     flex: 1; 
     min-width: 300px;   
@@ -277,6 +286,36 @@ textarea{
   transform: translateY(-7px);
 }
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 0px 30px 30px 30px;
+  height: 500px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item.tall {
+  grid-row: span 2;
+  grid-column: 2; 
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
 
 
 
@@ -316,7 +355,21 @@ textarea{
     z-index: 10;
     width: 40px;
     height: 40px;
-  } 
+  }
+  
+   .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+    .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature {
+    max-width: 90%;
+  }
+  
+
 }
 
 
